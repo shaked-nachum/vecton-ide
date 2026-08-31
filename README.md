@@ -8,6 +8,26 @@
 
 Supervise AI coding agents from one desktop cockpit.
 
+## Quick install
+
+One command downloads the latest build, clears the OS quarantine flag, and
+starts the installer -- no first-launch warning.
+
+**macOS** (Terminal):
+
+```bash
+curl -fsSL https://github.com/shaked-nachum/vecton-ide/releases/latest/download/Vecton-macos-arm64.dmg -o /tmp/Vecton.dmg && xattr -c /tmp/Vecton.dmg && open /tmp/Vecton.dmg
+```
+
+**Windows** (PowerShell):
+
+```powershell
+iwr -useb https://github.com/shaked-nachum/vecton-ide/releases/latest/download/Vecton-windows-x64-setup.exe -OutFile "$env:TEMP\Vecton-setup.exe"; Unblock-File "$env:TEMP\Vecton-setup.exe"; Start-Process "$env:TEMP\Vecton-setup.exe"
+```
+
+Prefer a manual download? Use the links below; the [First launch](#first-launch)
+steps get you past the warning.
+
 ## Download
 
 | Platform | |
