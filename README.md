@@ -24,6 +24,25 @@ curl -fL https://github.com/shaked-nachum/vecton-ide/releases/latest/download/Ve
 $setup="$env:TEMP\Vecton-setup.exe"; curl.exe -fL# https://github.com/shaked-nachum/vecton-ide/releases/latest/download/Vecton-windows-x64-setup.exe -o $setup; if($?){Start-Process $setup}
 ```
 
+<details>
+<summary><strong>Install latest pre-release (Alpha)</strong></summary>
+
+> Pre-release builds contain experimental features and rapid changes that may be less stable.
+
+**macOS** (Terminal):
+
+```bash
+TAG=$(curl -s https://api.github.com/repos/shaked-nachum/vecton-ide/releases | grep -m1 '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/') && curl -fL "https://github.com/shaked-nachum/vecton-ide/releases/download/$TAG/Vecton-macos-arm64.dmg" -o /tmp/Vecton.dmg && xattr -c /tmp/Vecton.dmg && open /tmp/Vecton.dmg
+```
+
+**Windows** (PowerShell):
+
+```powershell
+$tag=(irm https://api.github.com/repos/shaked-nachum/vecton-ide/releases)[0].tag_name; $setup="$env:TEMP\Vecton-setup.exe"; curl.exe -fL# "https://github.com/shaked-nachum/vecton-ide/releases/download/$tag/Vecton-windows-x64-setup.exe" -o $setup; if($?){Start-Process $setup}
+```
+
+</details>
+
 Prefer clicking? Use the links below; the [First launch](#first-launch) steps
 get you past the warning.
 
