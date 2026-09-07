@@ -10,23 +10,22 @@ Supervise AI coding agents from one desktop cockpit.
 
 ## Quick install
 
-One command downloads the latest build, clears the OS quarantine flag, and
-starts the installer -- no first-launch warning.
+Paste one line. Vecton downloads from GitHub and the installer opens.
 
 **macOS** (Terminal):
 
 ```bash
-curl -fsSL https://github.com/shaked-nachum/vecton-ide/releases/latest/download/Vecton-macos-arm64.dmg -o /tmp/Vecton.dmg && xattr -c /tmp/Vecton.dmg && open /tmp/Vecton.dmg
+curl -fL https://github.com/shaked-nachum/vecton-ide/releases/latest/download/Vecton-macos-arm64.dmg -o /tmp/Vecton.dmg && xattr -c /tmp/Vecton.dmg && open /tmp/Vecton.dmg
 ```
 
 **Windows** (PowerShell):
 
 ```powershell
-iwr -useb https://github.com/shaked-nachum/vecton-ide/releases/latest/download/Vecton-windows-x64-setup.exe -OutFile "$env:TEMP\Vecton-setup.exe"; Unblock-File "$env:TEMP\Vecton-setup.exe"; Start-Process "$env:TEMP\Vecton-setup.exe"
+$setup="$env:TEMP\Vecton-setup.exe"; curl.exe -fL# https://github.com/shaked-nachum/vecton-ide/releases/latest/download/Vecton-windows-x64-setup.exe -o $setup; if($?){Start-Process $setup}
 ```
 
-Prefer a manual download? Use the links below; the [First launch](#first-launch)
-steps get you past the warning.
+Prefer clicking? Use the links below; the [First launch](#first-launch) steps
+get you past the warning.
 
 ## Download
 
@@ -46,7 +45,8 @@ first run.
 
 ## First launch
 
-These builds are not code-signed yet, so your OS will warn you once:
+Skip this if you used the one-liner. These builds are not code-signed yet, so a
+downloaded-by-hand installer gets one OS warning:
 
 * **Windows** — SmartScreen shows "Windows protected your PC". Choose
   **More info → Run anyway**.
