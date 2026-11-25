@@ -6,7 +6,7 @@
 
 # Vecton
 
-Supervise AI coding agents from one desktop cockpit.
+Run a team of AI coding agents without losing control.
 
 ## Quick install
 
